@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+     CWP Events Listings
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="has-header">
+  <ion-list *ngFor="let data of items" no-lines>
+    <ion-item>
+      <img src="{{data.image}}" alt="" width="20%">
+      Icon: {{data.icon}} Text: {{ data.title }} - Value: {{ data.note }}
+    </ion-item>
+  </ion-list>
+</ion-content>

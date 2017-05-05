@@ -28,3 +28,11 @@ To use this template, either create a new ionic project using the ionic node.js 
 ```bash
 	$ ionic resources
 ```
+
+## TODOS
+
+- open ticket on website
+- status bar styles
+- card styles
+- store events on storage
+- push down to refresh

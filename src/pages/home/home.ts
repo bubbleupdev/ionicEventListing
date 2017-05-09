@@ -1,30 +1,26 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { EventsService } from '../../providers/events-service';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers: [EventsService]
 })
 export class HomePage {
 
   public icons;
   public items;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public eventsService: EventsService) {
+    this.loadEvents();
+  }
 
-
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-      'american-football', 'boat', 'bluetooth', 'build'];
-
-    this.items = [];
-    for (let i = 1; i < 100; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)],
-        image: "https://s3.amazonaws.com/busites_www/woodlandscenter2016com/pages/Casting-Crowns.jpg"
-      });
-    }
+  loadEvents() {
+    this.eventsService.load()
+    .then(data => {
+      this.items = data;
+    });
   }
 
 }

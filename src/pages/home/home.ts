@@ -30,13 +30,13 @@ export class HomePage {
   ) {
     this.service.getEvents()
       .subscribe(
-      data => this.events = data.results
+      data => this.events = data
       )
   }
   doInfinite(e) {
     this.service.getEvents()
       .subscribe(
-      data => this.events.push(...data.results),
+      data => this.events.push(...data),
       err => console.log(err),
       () => e.complete()
       )
@@ -44,7 +44,7 @@ export class HomePage {
   doRefresh(e) {
     this.service.getEvents()
       .subscribe(
-      data => this.events.unshift(...data.results),
+      data => this.events.unshift(...data),
       err => console.log(err),
       () => e.complete()
       )

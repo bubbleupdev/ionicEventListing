@@ -9,8 +9,34 @@
 <ion-content class="has-header">
   <ion-list *ngFor="let data of events" no-lines>
     <ion-item>
-      <img src="{{data.image}}" alt="" width="20%">
-      Icon: {{data.icon}} Text: {{ data.title }} - Value: {{ data.note }}
+      <ion-grid>
+        <ion-row justify-content-center>
+          <ion-col col-auto>
+            <img src="{{data.page.image}}" alt="" width="100%">
+          </ion-col>
+        </ion-row>
+        <ion-row justify-content-center>
+          <ion-col col-auto>
+            {{data.page.title}}
+          </ion-col>
+        </ion-row>
+        <ion-row justify-content-center>
+          <ion-col col-auto>
+            {{data.event_date}}
+          </ion-col>
+        </ion-row>
+        <ion-row justify-content-center>
+          <ion-col col-auto [innerHTML]="data.blurb_html"></ion-col>
+        </ion-row>
+        <ion-row justify-content-center>
+          <ion-col>
+            More Info
+          </ion-col>
+          <ion-col>
+            Get Tickets
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-item>
   </ion-list>
 </ion-content>

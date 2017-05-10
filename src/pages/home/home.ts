@@ -63,6 +63,13 @@ export class HomePage {
     //   {page: DetailPage, params: user}
     // ])
   }
+
+  openUrl(path) {
+    window.open(path, '_system');
+  }
+  openWebsiteUrl(path) {
+    window.open('https://woodlandscenter.dev.busites.com/'+path, '_system');
+  }
 }
 
 /*

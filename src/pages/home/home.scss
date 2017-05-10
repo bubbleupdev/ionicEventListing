@@ -1,4 +1,9 @@
 page-home {
+	ion-content .content-md {
+		background-color: #ECECEC;
+
+	}
+	
 	.toolbar-title.toolbar-title-md {
 		color: white;
 		text-shadow: 0px 1px 1px black;
@@ -30,6 +35,8 @@ page-home {
 
 	.event-blurb * {
 		vertical-align: middle;
+		white-space: normal;
+    	text-align: center;
 	}
 
 	.toolbar-background-md {

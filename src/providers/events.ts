@@ -5,7 +5,6 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class Events {
   constructor(public http: Http) {
-    console.log('Hello Events Provider');
   }
 
   getEvents() {

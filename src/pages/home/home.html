@@ -1,14 +1,18 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button menuToggle="left" start>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
-     The Cynthia Woods Mitchell Pavilion | Events
+     <span>The Cynthia Woods Mitchell Pavilion</span> <br />
+     <span>Events</span>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="has-header">
   <ion-list [virtualScroll]="events" no-lines>
-    <ion-item *virtualItem="let data">
+    <ion-item *virtualItem="let data" class="event-item">
       <ion-grid>
         <ion-row justify-content-center>
           <ion-col col-auto>

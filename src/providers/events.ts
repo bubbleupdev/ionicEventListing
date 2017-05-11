@@ -9,7 +9,7 @@ export class Events {
   }
 
   getEvents() {
-  	debugger;
+  	// debugger;
     return this.http.get('https://woodlandscenter.dev.busites.com/app-api/events?_format=json')
     .map(res => res.json())
   }

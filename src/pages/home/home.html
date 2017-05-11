@@ -7,8 +7,8 @@
 </ion-header>
 
 <ion-content class="has-header">
-  <ion-list *ngFor="let data of events" no-lines>
-    <ion-item>
+  <ion-list [virtualScroll]="events" no-lines>
+    <ion-item *virtualItem="let data">
       <ion-grid>
         <ion-row justify-content-center>
           <ion-col col-auto>

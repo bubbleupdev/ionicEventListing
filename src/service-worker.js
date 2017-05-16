@@ -18,7 +18,8 @@ self.toolbox.precache(
     './build/main.css',
     './build/polyfills.js',
     'index.html',
-    'manifest.json'
+    'manifest.json',
+    'https://woodlandscenter.dev.busites.com/app-api/events?_format=json'
   ]
 );
 

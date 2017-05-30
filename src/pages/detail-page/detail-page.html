@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <!--<button ion-button menuToggle="left" start>
+      <ion-icon name="menu"></ion-icon>
+    </button>-->
+    <ion-title>
+      <span>The Cynthia Woods Mitchell Pavilion</span> <br />
+      <span>{{this.event.title}}</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <!--<ion-list [virtualScroll]="this.event" [approxItemHeight]="'480px'" no-lines>-->
+    <!--<ion-item *virtualItem="let data" class="event-item">-->
+      <!--<ion-grid>-->
+        <!--<ion-row justify-content-center>-->
+          <!--<ion-col col-auto>-->
+            <!--<img class="event-image" src="{{data.page.image}}" alt="" width="100%">-->
+          <!--</ion-col>-->
+        <!--</ion-row>-->
+        <!--<ion-row justify-content-center>-->
+          <!--<ion-col class="event-title" col-auto>-->
+            <!--{{data.page.title}}-->
+          <!--</ion-col>-->
+        <!--</ion-row>-->
+        <!--<ion-row justify-content-center>-->
+          <!--<ion-col class="event-date" col-auto>-->
+            <!--{{formatDate(data)}}-->
+          <!--</ion-col>-->
+        <!--</ion-row>-->
+        <!--<ion-row justify-content-center>-->
+          <!--<ion-col class="event-blurb" col-auto [innerHTML]="data.blurb_html"></ion-col>-->
+        <!--</ion-row>-->
+        <!--<ion-row justify-content-center>-->
+          <!--<ion-col>-->
+            <!--<button ion-button full (click)="openWebsiteUrl(data.id)">More Info</button>-->
+          <!--</ion-col>-->
+          <!--<ion-col>-->
+            <!--<button ion-button full (click)="openUrl(data.ticket_url)">Get Tickets</button>-->
+          <!--</ion-col>-->
+        <!--</ion-row>-->
+      <!--</ion-grid>-->
+    <!--</ion-item>-->
+  <!--</ion-list>-->
+
+</ion-content>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
 import {Events} from "../../providers/events";
+import {DetailPage} from "../detail-page/detail-page";
 
 
 @IonicPage()
@@ -82,7 +83,9 @@ export class HomePage {
 	}
 
 	openWebsiteUrl(path) {
-		window.open('https://woodlandscenter.dev.busites.com/' + path, '_system');
+		this.navCtrl.push(DetailPage,{id:path});
+
+		// window.open('https://woodlandscenter.dev.busites.com/' + path, '_system');
 	}
 
 }

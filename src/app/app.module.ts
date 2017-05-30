@@ -8,11 +8,14 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
 import { HttpModule} from '@angular/http';
+import {DetailPage} from "../pages/detail-page/detail-page";
+import {Events} from "../providers/events";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    DetailPage
   ],
   imports: [
     BrowserModule,
@@ -22,11 +25,13 @@ import { HttpModule} from '@angular/http';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    DetailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Events,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

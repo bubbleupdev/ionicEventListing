@@ -1,6 +1,5 @@
 {
   "name": "cwp_listing2",
-  "app_id": "",
-  "v2": true,
-  "typescript": true
+  "app_id": "ea1bfcff",
+  "type": "ionic-angular"
 }

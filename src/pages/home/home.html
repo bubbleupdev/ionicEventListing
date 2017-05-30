@@ -1,8 +1,8 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle="left" start>
+    <!--<button ion-button menuToggle="left" start>
       <ion-icon name="menu"></ion-icon>
-    </button>
+    </button>-->
     <ion-title>
      <span>The Cynthia Woods Mitchell Pavilion</span> <br />
      <span>Events</span>
@@ -11,7 +11,7 @@
 </ion-header>
 
 <ion-content class="has-header">
-  <ion-list [virtualScroll]="events" no-lines>
+  <ion-list [virtualScroll]="this.events" [approxItemHeight]="'480px'" no-lines>
     <ion-item *virtualItem="let data" class="event-item">
       <ion-grid>
         <ion-row justify-content-center>
@@ -34,7 +34,7 @@
         </ion-row>
         <ion-row justify-content-center>
           <ion-col>
-            <button ion-button full (click)="openWebsiteUrl(data.page.path)">More Info</button>
+            <button ion-button full (click)="openWebsiteUrl(data.id)">More Info</button>
           </ion-col>
           <ion-col>
             <button ion-button full (click)="openUrl(data.ticket_url)">Get Tickets</button>

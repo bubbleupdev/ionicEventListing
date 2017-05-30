@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, LoadingController, NavController, NavParams} from 'ionic-angular';
 import {Events} from "../../providers/events";
 
 @IonicPage()
@@ -11,18 +11,32 @@ export class DetailPage {
 
   public id: string;
 
-  public event = [];
+  public event = {blurb_html:null,at:null};
+  public page = {title:null, image:null};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public service: Events) {
+  public eventDate: string = null;
+  public eventTime: string = null;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public service: Events, public loadingCtrl: LoadingController) {
     this.id = this.navParams.get('id');
-    console.log("Detail Page");
-    console.log(this.id);
+      let loading = this.loadingCtrl.create({
+          content: 'Please wait...'
+      });
+      loading.present();
     this.service.getEventById(this.id)
         .subscribe(
-            data => this.event = data
+            data => {
+              this.event = data;
+              this.page = data.page;
+              this.eventDate = this.service.formatDate(this.event);
+              this.eventTime = this.service.formatTime(this.event);
+                loading.dismiss();
+            }
         );
-
-    console.dir(this.event);
   }
+
+    openUrl(path) {
+        window.open(path, '_system');
+    }
 
 }

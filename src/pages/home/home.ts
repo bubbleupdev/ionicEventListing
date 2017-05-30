@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, LoadingController, ModalController, NavController, NavParams} from 'ionic-angular';
 import {Events} from "../../providers/events";
 import {DetailPage} from "../detail-page/detail-page";
 
@@ -17,11 +17,22 @@ export class HomePage {
 	constructor(public navCtrl: NavController,
 				public navparams: NavParams,
 				public service: Events,
-				public modalCtrl: ModalController) {
+				public modalCtrl: ModalController,
+				public loadingCtrl: LoadingController) {
+
+		let loading = this.loadingCtrl.create({
+			content: 'Please wait...'
+		});
+		loading.present();
+
+
 		console.log("home ts");
 		this.service.getEvents()
             .subscribe(
-				data => this.events = data
+				data => {
+					this.events = data;
+					loading.dismiss();
+				}
 			)
 	}
 

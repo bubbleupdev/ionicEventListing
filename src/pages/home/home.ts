@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {IonicPage, LoadingController, ModalController, NavController, NavParams} from 'ionic-angular';
-import {Events} from "../../providers/events";
+import {ApiProvider} from "../../providers/api-provider";
 import {DetailPage} from "../detail-page/detail-page";
 
 
@@ -8,7 +8,7 @@ import {DetailPage} from "../detail-page/detail-page";
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-	providers: [Events]
+	providers: [ApiProvider]
 })
 export class HomePage {
 	public events = [];
@@ -16,7 +16,7 @@ export class HomePage {
 
 	constructor(public navCtrl: NavController,
 				public navparams: NavParams,
-				public service: Events,
+				public service: ApiProvider,
 				public modalCtrl: ModalController,
 				public loadingCtrl: LoadingController) {
 

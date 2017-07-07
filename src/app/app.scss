@@ -14,10 +14,38 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-.platform-ios .app-root {
-  margin-top: 20px;
-}
 
+.platform-ios .app-root {
+  padding-top: 40px;
+}
+.hidden {
+  display: none;
+}
+ion-nav {
+  > page-season-seats,
+  > page-directions,
+  > page-rules,
+  > page-maps,
+  > page-parking,
+  > page-detail-page {
+    .layout-column.beta {
+      display: none;
+    }
+    ion-col {
+      .modal {
+        display: none;
+      }
+      .form-error {
+        display: none;
+      }
+    }
+    > ion-header {
+      > ion-navbar.toolbar {
+        min-height: 100px !important;
+      }
+    }
+  }
+}
 ion-header button ion-icon {
   color: white !important;
 }
@@ -27,6 +55,9 @@ ion-header button ion-icon {
   padding: 15px;
 }
 
+ion-menu .scroll-content {
+  background-color: #ffffff;
+}
 ion-content .content-md {
   background-color: #ECECEC;
 }
@@ -44,7 +75,7 @@ ion-content .content-md {
 .toolbar-title {
   white-space: initial;
   text-align: center;
-  padding: 0;
+  //padding: 0;
 }
 
 .toolbar-title.toolbar-title,
@@ -95,5 +126,9 @@ button.button-md {
 }
 
 ion-title {
-  padding: 0 10% !important;
+  //padding: 0 10% !important;
+}
+
+.widget {
+  display: none;
 }

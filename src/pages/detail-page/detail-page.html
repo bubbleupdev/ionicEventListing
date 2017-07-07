@@ -35,6 +35,9 @@
         </ion-row>
         <ion-row justify-content-center>
           <ion-col>
+            <button ion-button full (click)="this.openUrl('https://maps.apple.com/?daddr=30.1587681,-95.469625')">Directions</button>
+          </ion-col>
+          <ion-col>
             <button ion-button full (click)="this.openUrl(this.event.ticket_url)">Get Tickets</button>
           </ion-col>
         </ion-row>

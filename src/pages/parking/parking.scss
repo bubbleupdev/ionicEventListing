@@ -1,0 +1,8 @@
+page-parking {
+  div.scroll-content > ion-grid > ion-row > ion-col > div > div.layout-column.alpha > p:nth-child(4) > a.btn-primary {
+    display: none;
+  }
+  .modal {
+    display: none;
+  }
+}

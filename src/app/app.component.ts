@@ -4,6 +4,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import {MapsPage} from "../pages/maps/maps";
+import {DirectionsPage} from "../pages/directions/directions";
+import {ParkingPage} from "../pages/parking/parking";
+import {RulesPage} from "../pages/rules/rules";
+import {SeasonSeatsPage} from "../pages/season-seats/season-seats";
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -17,6 +23,11 @@ export class MyApp {
 
     this.pages = [
       {title: 'Home', component: HomePage, icon: 'home'},
+      {title: 'Directions', component: DirectionsPage, icon: 'compass'},
+      {title: 'Parking', component: ParkingPage, icon: 'car'},
+      {title: 'Maps', component: MapsPage, icon: ''},
+      {title: 'Rules', component: RulesPage, icon: ''},
+      {title: 'Season Seats', component: SeasonSeatsPage, icon: ''},
     ];
 
     platform.ready().then(() => {

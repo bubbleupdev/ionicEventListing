@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {IonicPage, LoadingController, NavController, NavParams} from 'ionic-angular';
-import {Events} from "../../providers/events";
+import {ApiProvider} from "../../providers/api-provider";
 
 @IonicPage()
 @Component({
@@ -17,7 +17,7 @@ export class DetailPage {
   public eventDate: string = null;
   public eventTime: string = null;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public service: Events, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public service: ApiProvider, public loadingCtrl: LoadingController) {
     this.id = this.navParams.get('id');
       let loading = this.loadingCtrl.create({
           content: 'Please wait...'

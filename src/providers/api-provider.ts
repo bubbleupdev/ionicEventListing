@@ -3,15 +3,15 @@ import {Http, RequestOptions, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class Events {
+export class ApiProvider {
   private apiHeaders: Headers = new Headers;
   private opts;
-  // private apiUrl = 'https://woodlandscenter.dev.busites.com/app-api/';
-  private apiUrl = 'https://www.woodlandscenter.org/app-api/';
+  private apiUrl = 'https://woodlandscenter.7.dev.bubbleup.com/app-api/';
+  // private apiUrl = 'https://www.woodlandscenter.org/app-api/';
   constructor(public http: Http) {
 
     // TODO get the headers working.
-    this.apiHeaders.set('Content-type', 'application/json')
+    // this.apiHeaders.set('Content-type', 'application/json')
 
     this.opts = new RequestOptions({
       headers: this.apiHeaders
@@ -20,7 +20,7 @@ export class Events {
 
   getEvents() {
   	// debugger;
-    return this.http.get(this.apiUrl + 'events?_format=json')
+    return this.http.get(this.apiUrl + 'events',this.opts)
     .map(res => res.json())
   }
 
@@ -28,6 +28,10 @@ export class Events {
 
     return this.http.get(this.apiUrl + 'events?id=' + $id + '&_format=json')
         .map(res => res.json())
+  }
+
+  getPage(path=null){
+    return this.http.get(this.apiUrl+'pages?path='+path).map(res => res.json());
   }
 
   formatDate(event) {
@@ -53,6 +57,7 @@ export class Events {
     return null;
 
   }
+
   formatTime(event){
     var date = new Date(event.at + ' UTC');
     var h = this.checkTime(date.getHours());

@@ -9,13 +9,23 @@ import { HomePage } from '../pages/home/home';
 
 import { HttpModule} from '@angular/http';
 import {DetailPage} from "../pages/detail-page/detail-page";
-import {Events} from "../providers/events";
+import {ApiProvider} from "../providers/api-provider";
+import {MapsPage} from "../pages/maps/maps";
+import {DirectionsPage} from "../pages/directions/directions";
+import {ParkingPage} from "../pages/parking/parking";
+import {RulesPage} from "../pages/rules/rules";
+import {SeasonSeatsPage} from "../pages/season-seats/season-seats";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    DetailPage
+    DetailPage,
+    MapsPage,
+    DirectionsPage,
+    ParkingPage,
+    RulesPage,
+    SeasonSeatsPage,
   ],
   imports: [
     BrowserModule,
@@ -26,12 +36,17 @@ import {Events} from "../providers/events";
   entryComponents: [
     MyApp,
     HomePage,
-    DetailPage
+    DetailPage,
+    MapsPage,
+    DirectionsPage,
+    ParkingPage,
+    RulesPage,
+    SeasonSeatsPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    Events,
+    ApiProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

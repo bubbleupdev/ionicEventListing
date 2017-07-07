@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="net.bubbleup.cwplisting-ionic" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>CWP Events</name>
-    <description>CWP Events Listing Application built on Ionic</description>
+<widget id="net.bubbleup.cwpfriendfinder" version="3.2.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>The Pavilion</name>
+    <description>Welcome to the Cynthia Woods Mitchell Pavilion's App. Now you can have access to The Pavilion anytime, anywhere.</description>
     <author email="apps@bubbleup.net" href="https://bubbleup.net/">BubbleUp LLC</author>
     <content src="index.html" />
     <access origin="*" />
@@ -24,7 +24,6 @@
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#c706c6" />
-
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />

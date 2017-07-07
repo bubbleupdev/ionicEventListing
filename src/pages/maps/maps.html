@@ -12,55 +12,15 @@
 
 
 <ion-content>
-  <ion-card class="adv-map">
-    <div style="position: relative">
-      <img src="assets/images/maps/site_mapnew_logo.jpg">
-
-    </div>
+  <ion-card class="adv-map" *ngFor="let map of mapImages">
+    <ion-img [src]="map.image" cache imageViewer></ion-img>
     <ion-item>
-      <h2>PAVILION SITE MAP</h2>
+      <h2 text-center>{{map.title}}</h2>
     </ion-item>
     <ion-item>
-      <button ion-button color="primary" full (click)="openModal()">
+      <button ion-button color="primary" full (click)="presentImage(map.image)">
         View
       </button>
     </ion-item>
-
   </ion-card>
-  <ion-card class="adv-map">
-    <div style="position: relative">
-      <img src="assets/images/maps/seating-chart.jpg">
-
-    </div>
-    <ion-item>
-      <h2>PAVILION SEATING CHART</h2>
-    </ion-item>
-    <ion-item>
-      <button ion-button color="primary" full>
-        View
-      </button>
-    </ion-item>
-
-  </ion-card>
-  <ion-card class="adv-map">
-    <div style="position: relative">
-      <img src="assets/images/maps/Public-Parking-and-Pathways-Map.jpg">
-      <!--<ion-fab right top>-->
-        <!--<button ion-fab class="fab-map">-->
-          <!--<ion-icon name='pin'></ion-icon>-->
-        <!--</button>-->
-      <!--</ion-fab>-->
-    </div>
-    <ion-item>
-      <h2>PAVILION PUBLIC PARKING AND PATHWAYS MAP</h2>
-    </ion-item>
-    <ion-item>
-      <button ion-button color="primary" full>
-        View
-      </button>
-    </ion-item>
-
-  </ion-card>
-
-
 </ion-content>

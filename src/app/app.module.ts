@@ -15,6 +15,7 @@ import {DirectionsPage} from "../pages/directions/directions";
 import {ParkingPage} from "../pages/parking/parking";
 import {RulesPage} from "../pages/rules/rules";
 import {SeasonSeatsPage} from "../pages/season-seats/season-seats";
+import {IonicImageViewerModule} from "ionic-img-viewer";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {SeasonSeatsPage} from "../pages/season-seats/season-seats";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    IonicImageViewerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

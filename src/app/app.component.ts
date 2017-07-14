@@ -22,7 +22,7 @@ export class MyApp {
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
 
     this.pages = [
-      {title: 'Home', component: HomePage, icon: 'home'},
+      {title: 'Events', component: HomePage, icon: 'calendar'},
       {title: 'Directions', component: DirectionsPage, icon: 'compass'},
       {title: 'Parking', component: ParkingPage, icon: 'car'},
       {title: 'Maps', component: MapsPage, icon: ''},

@@ -10,8 +10,10 @@
 </ion-header>
 
 <ion-content class="has-header">
-  <ion-list [virtualScroll]="this.events" [approxItemHeight]="'480px'" no-lines>
-    <ion-item *virtualItem="let data" class="event-item">
+  <!--<ion-list [virtualScroll]="this.events" [approxItemHeight]="'480px'" no-lines>-->
+  <ion-list no-lines>
+    <!--<ion-item *virtualItem="let data" class="event-item">-->
+    <ion-item *ngFor="let data of this.events" class="event-item">
       <ion-grid>
         <ion-row justify-content-center>
           <ion-col col-auto>
@@ -33,7 +35,7 @@
         </ion-row>
         <ion-row justify-content-center>
           <ion-col>
-            <button ion-button full (click)="openWebsiteUrl(data.id)">More Info</button>
+            <button ion-button full (click)="openDetailPage(data.id)">More Info</button>
           </ion-col>
           <ion-col>
             <button ion-button full (click)="openUrl(data.ticket_url)">Get Tickets</button>
@@ -41,5 +43,6 @@
         </ion-row>
       </ion-grid>
     </ion-item>
+    <br><br>
   </ion-list>
 </ion-content>

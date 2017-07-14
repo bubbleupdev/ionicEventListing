@@ -93,10 +93,8 @@ export class HomePage {
 		window.open(path, '_system');
 	}
 
-	openWebsiteUrl(path) {
+	openDetailPage(path) {
 		this.navCtrl.push(DetailPage,{id:path});
-
-		// window.open('https://woodlandscenter.dev.busites.com/' + path, '_system');
 	}
 
 }

@@ -37,18 +37,18 @@ export class HomePage {
 	}
 
 	getEvents(){
-        this.storage.get('events').then((data) => {
-            console.log("Getting Data"),
-                this.events = data;
-        });
-
-        if (this.events) {
-            console.log("Yes Events")
-            console.dir(this.events)
-        }
-
-        if (this.events!=null) {
-            console.log("Not Events");
+        // this.storage.get('events').then((data) => {
+        //     console.log("Getting Data"),
+        //         this.events = data;
+        // });
+        //
+        // if (this.events) {
+        //     console.log("Yes Events")
+        //     console.dir(this.events)
+        // }
+        //
+        // if (this.events!=null) {
+        //     console.log("Not Events");
             this.service.getEvents()
                 .subscribe(
                     data => {
@@ -59,7 +59,7 @@ export class HomePage {
                         );
                     }
                 )
-        }
+        // }
 	}
 
 	doInfinite(e) {

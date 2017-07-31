@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Http, RequestOptions, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
+import * as moment from "moment";
+
 
 @Injectable()
 export class ApiProvider {
@@ -26,7 +28,7 @@ export class ApiProvider {
 
   getEventById($id) {
 
-    return this.http.get(this.apiUrl + 'events?id=' + $id + '&_format=json')
+    return this.http.get(this.apiUrl + 'events/' + $id + '&_format=json')
         .map(res => res.json())
   }
 
@@ -36,41 +38,19 @@ export class ApiProvider {
 
   formatDate(event) {
 
-    if(event) {
-      var date = new Date(event.at + ' UTC');
-
-      var monthNames = [
-        "January", "February", "March",
-        "April", "May", "June", "July",
-        "August", "September", "October",
-        "November", "December"
-      ];
-
-      var day = date.getDate();
-      var monthIndex = date.getMonth();
-      var dayIndex = date.getDay();
-
-      var dayOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"][dayIndex];
-
-      return dayOfWeek + ' ' + monthNames[monthIndex] + ' ' + day;
+    try {
+        return moment(event.at).format('dddd MMMM Do');
+    } catch (e){
+      console.error(event.page.title + " does not have a date");
     }
-    return null;
-
   }
 
-  formatTime(event){
-    var date = new Date(event.at + ' UTC');
-    var h = this.checkTime(date.getHours());
-    var m = this.checkTime(date.getMinutes());
-    var time = h + ":" + m;
-    return time;
-  }
-
-  checkTime(i) {
-    return (i < 10) ? "0" + i : i;
-  }
-
-  isEmptyObject(obj) {
-    return (Object.keys(obj).length === 0);
+  formatTime(event) {
+      var date = new Date(event.at + ' UTC');
+      try {
+          return moment.utc(event.at).format('h:mm a');
+      } catch (e) {
+          console.error(event.page.title + " does not have a date");
+      }
   }
 }

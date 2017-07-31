@@ -3,6 +3,7 @@ import {IonicPage, LoadingController, ModalController, NavController, NavParams}
 import {ApiProvider} from "../../providers/api-provider";
 import {DetailPage} from "../detail-page/detail-page";
 import {Storage} from '@ionic/storage';
+import * as moment from "moment";
 
 
 @IonicPage()
@@ -20,6 +21,7 @@ export class HomePage {
 				public service: ApiProvider,
 				public modalCtrl: ModalController,
                 private storage: Storage,
+				// private moment: Moment,
 				public loadingCtrl: LoadingController) {
 
 		let loading = this.loadingCtrl.create({
@@ -94,22 +96,12 @@ export class HomePage {
 	}
 
 	formatDate(event) {
-		var date = new Date(event.at + ' UTC');
 
-		var monthNames = [
-			"January", "February", "March",
-			"April", "May", "June", "July",
-			"August", "September", "October",
-			"November", "December"
-		];
-
-		var day = date.getDate();
-		var monthIndex = date.getMonth();
-		var dayIndex = date.getDay();
-
-		var dayOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"][dayIndex];
-
-		return dayOfWeek + ' ' + monthNames[monthIndex] + ' ' + day;
+        try {
+            return moment(event.at).format('dddd MMMM Do');
+        } catch (e) {
+            console.error(event.page.title + " does not have a date");
+        }
 
 	}
 
@@ -118,7 +110,7 @@ export class HomePage {
 	}
 
 	openDetailPage(path) {
-		this.navCtrl.push(DetailPage,{id:path});
+		this.navCtrl.push(DetailPage,{event:path});
 	}
 
 }

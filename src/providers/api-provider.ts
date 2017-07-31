@@ -6,8 +6,8 @@ import 'rxjs/add/operator/map';
 export class ApiProvider {
   private apiHeaders: Headers = new Headers;
   private opts;
-  private apiUrl = 'https://woodlandscenter.7.dev.bubbleup.com/app-api/';
-  // private apiUrl = 'https://www.woodlandscenter.org/app-api/';
+  private apiUrl = 'https://woodlandscenter.7.dev.bubbleup.com/api/v1/';
+  // private apiUrl = 'https://www.woodlandscenter.org/api/v1/';
   constructor(public http: Http) {
 
     // TODO get the headers working.

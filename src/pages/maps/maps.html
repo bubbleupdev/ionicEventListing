@@ -13,14 +13,10 @@
 
 <ion-content>
   <ion-card class="adv-map" *ngFor="let map of mapImages">
-    <ion-img [src]="map.image" cache (click)="presentImage(map.image)"></ion-img>
+    <img [src]="map.image" class="thumbnail" imageViewer/>
+    <ion-icon name="search" class="img-zoom-icon"></ion-icon>
     <ion-item>
-      <h2 text-center>{{map.title}}</h2>
-    </ion-item>
-    <ion-item>
-      <button ion-button color="primary" full (click)="presentImage(map.image)">
-        View
-      </button>
+      <h2 text-center [innerHTML]="this.domSanitizer.bypassSecurityTrustHtml(map.title)"></h2>
     </ion-item>
   </ion-card>
 </ion-content>

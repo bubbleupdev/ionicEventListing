@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
 import {ApiProvider} from "../../providers/api-provider";
 import {ImageViewerController} from "ionic-img-viewer";
 import {ImageZoomPage} from "../image-zoom/image-zoom";
+import {PhotoViewer} from '@ionic-native/photo-viewer';
+import {DomSanitizer} from "@angular/platform-browser";
 
-/**
- * Generated class for the MapsPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+
 @IonicPage()
 @Component({
   selector: 'page-maps',
@@ -24,8 +21,13 @@ export class MapsPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public apiProvider: ApiProvider,
+              private photoViewer: PhotoViewer,
+              private platform: Platform,
+              public domSanitizer: DomSanitizer,
               imageViewerCtrl: ImageViewerController) {
+
       this._imageViewerCtrl = imageViewerCtrl;
+
       this.mapImages = [
           {title: 'SITE MAP', image: "assets/images/maps/site_mapnew_logo.jpg"},
           {title: 'SEATING CHART', image: "assets/images/maps/seating-chart.jpg"},
@@ -40,7 +42,21 @@ export class MapsPage {
   }
 
     presentImage(myImage) {
-        this.navCtrl.push(ImageZoomPage,{media:myImage});
+        console.log("presentImage");
+        console.log(myImage);
+        const imageViewer = this._imageViewerCtrl.create(myImage);
+        imageViewer.present();
+        // const imageViewer = this._imageViewerCtrl.create(myImage);
+        // imageViewer.present();
+
+
+
+        // if(this.platform.is('android') || this.platform.is('ios')) {
+        //     this.photoViewer.show(myImage);
+        // } else {
+        //     this.navCtrl.push(ImageZoomPage, {media: myImage});
+        // }
+
     }
 
 }

@@ -1,7 +1,15 @@
 page-maps {
 
-  ion-card.adv-map p {
-    font-size: 0.7em !important;
+  ion-card {
+    &.adv-map p {
+      font-size: 0.7em !important;
+    }
+    ion-icon.img-zoom-icon {
+      float: right;
+      position: relative;
+      margin-top: -35px;
+      padding: 10px;
+    }
   }
 
   button[fab].fab-map {

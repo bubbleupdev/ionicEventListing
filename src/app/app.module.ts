@@ -18,6 +18,7 @@ import {SeasonSeatsPage} from "../pages/season-seats/season-seats";
 import {IonicImageViewerModule} from "ionic-img-viewer";
 import {IonicStorageModule} from '@ionic/storage';
 import {ImageZoomPage} from "../pages/image-zoom/image-zoom";
+import {PhotoViewer} from "@ionic-native/photo-viewer";
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import {ImageZoomPage} from "../pages/image-zoom/image-zoom";
     StatusBar,
     SplashScreen,
     ApiProvider,
+    PhotoViewer,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

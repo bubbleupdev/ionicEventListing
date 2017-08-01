@@ -17,7 +17,7 @@
       <ion-grid>
         <ion-row justify-content-center>
           <ion-col col-auto>
-            <img class="event-image" src="{{data.page.image}}" alt="" width="100%">
+            <img cache class="event-image" src="{{data.page.image}}" alt="" width="100%">
           </ion-col>
         </ion-row>
         <ion-row justify-content-center>
@@ -31,7 +31,7 @@
           </ion-col>
         </ion-row>
         <ion-row justify-content-center>
-          <ion-col class="event-blurb" col-auto [innerHTML]="data.blurb_html"></ion-col>
+          <ion-col class="event-blurb" col-auto [innerHTML]="this.domSanitizer.bypassSecurityTrustHtml(data.blurb_html)"></ion-col>
         </ion-row>
         <ion-row justify-content-center>
           <ion-col>

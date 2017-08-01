@@ -3,6 +3,7 @@ import {IonicPage, LoadingController, ModalController, NavController, NavParams}
 import {ApiProvider} from "../../providers/api-provider";
 import {DetailPage} from "../detail-page/detail-page";
 import {Storage} from '@ionic/storage';
+import {DomSanitizer} from "@angular/platform-browser";
 import * as moment from "moment";
 
 
@@ -22,7 +23,8 @@ export class HomePage {
 				public modalCtrl: ModalController,
                 private storage: Storage,
 				// private moment: Moment,
-				public loadingCtrl: LoadingController) {
+				public loadingCtrl: LoadingController,
+                public domSanitizer: DomSanitizer) {
 
 		let loading = this.loadingCtrl.create({
 			content: 'Please wait...'

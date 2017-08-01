@@ -26,8 +26,7 @@ ion-nav {
   > page-directions,
   > page-rules,
   > page-maps,
-  > page-parking,
-  > page-detail-page {
+  > page-parking {
     .layout-column.beta {
       display: none;
     }
@@ -73,6 +72,15 @@ ion-content .content-md {
   min-height: 74px;
 }
 
+ion-title.title {
+  position: absolute;
+  left: 0;
+  top: 30%;
+  width: 100%;
+  padding: 0 4rem;
+  z-index: 1;
+}
+
 .toolbar-title {
   white-space: initial;
   text-align: center;
@@ -83,6 +91,10 @@ ion-content .content-md {
 .toolbar-title.toolbar-title-md {
   color: white;
   text-shadow: 0px 1px 1px black;
+}
+
+.back-button.show-back-button {
+  z-index: 9999;
 }
 
 .event-date {

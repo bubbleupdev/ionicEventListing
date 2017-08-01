@@ -8,8 +8,8 @@ import * as moment from "moment";
 export class ApiProvider {
     private apiHeaders: Headers = new Headers;
     private opts;
-    private API_URL = 'https://woodlandscenter.7.dev.bubbleup.com/api/v1/';
-    // readonly API_URL = 'https://www.woodlandscenter.org/api/v1/';
+    // private API_URL = 'https://woodlandscenter.7.dev.bubbleup.com/api/v1/';
+    readonly API_URL = 'https://www.woodlandscenter.org/api/v1/';
 
     constructor(public http: Http) {
 

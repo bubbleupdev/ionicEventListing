@@ -15,9 +15,11 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-.platform-ios .app-root {
-  padding-top: 40px;
+//TODO hide when compiling ios app
+.platform-ios.platform-mobileweb .app-root {
+  margin-top: 20px;
 }
+
 .hidden {
   display: none;
 }
@@ -68,14 +70,16 @@ ion-content .content-md {
   margin-bottom: 1rem;
 }
 
-.toolbar {
-  min-height: 74px;
+ion-navbar.toolbar,
+.ios ion-nav > .ion-page > ion-header > .toolbar.statusbar-padding:first-child {
+  min-height: 75px;
 }
+
 
 ion-title.title {
   position: absolute;
   left: 0;
-  top: 30%;
+  top: .5rem;
   width: 100%;
   padding: 0 4rem;
   z-index: 1;

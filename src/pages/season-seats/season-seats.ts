@@ -12,7 +12,7 @@ import {Storage} from '@ionic/storage';
 export class SeasonSeatsPage {
 
 
-  public page: any;
+  public page: any = null;
   private path: string = "season-seats";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ApiProvider, private storage:Storage) {

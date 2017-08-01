@@ -10,7 +10,7 @@ import {Storage} from '@ionic/storage';
 })
 export class RulesPage {
 
-  public page:any;
+  public page: any = null;
   private path:string ="pavilion-rules";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ApiProvider, private storage: Storage) {

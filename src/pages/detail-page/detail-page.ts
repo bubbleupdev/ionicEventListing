@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {IonicPage, LoadingController, NavController, NavParams} from 'ionic-angular';
 import {ApiProvider} from "../../providers/api-provider";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @IonicPage()
 @Component({
@@ -17,12 +18,7 @@ export class DetailPage {
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
                 public service: ApiProvider,
-                public loadingCtrl: LoadingController) {
-        // let loading = this.loadingCtrl.create({
-        //     content: 'Please wait...'
-        // });
-        //
-        // loading.present();
+                public domSanitizer: DomSanitizer) {
 
         this.event = this.navParams.get('event');
         console.dir(this.event);

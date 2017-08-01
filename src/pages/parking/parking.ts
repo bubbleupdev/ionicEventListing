@@ -10,8 +10,7 @@ import {Storage} from '@ionic/storage';
 })
 export class ParkingPage {
 
-
-  public page: any;
+  public page: any = null;
   private path: string = "parking";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ApiProvider, private storage: Storage) {

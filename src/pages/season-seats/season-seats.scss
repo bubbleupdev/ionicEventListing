@@ -235,4 +235,17 @@ page-season-seats {
       }
     }
   }
+
+  hr {
+    display: none;
+  }
+
+  ion-card {
+    ion-icon.img-zoom-icon {
+      float: right;
+      position: relative;
+      margin-top: -35px;
+      padding: 10px;
+    }
+  }
 }

@@ -10,12 +10,19 @@
   </ion-navbar>
 </ion-header>
 
-
-
 <ion-content padding>
   <ion-grid *ngIf="this.page">
     <ion-row>
-      <ion-col class="page-html" col-auto [innerHTML]="page.html"></ion-col>
+      <ion-col class="page-html" col-auto [innerHTML]="this.domSanitizer.bypassSecurityTrustHtml(page.html)"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-card class="adv-map">
+        <img style="width: 100%" src="assets/images/maps/2017_seating_chart_season_seats.svg" class="" imageViewer />
+        <ion-icon name="search" class="img-zoom-icon"></ion-icon>
+        <ion-item>
+          <h2 text-center [innerHTML]="this.domSanitizer.bypassSecurityTrustHtml('View Seating Chart')"></h2>
+        </ion-item>
+      </ion-card>
     </ion-row>
   </ion-grid>
 </ion-content>

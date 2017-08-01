@@ -29,9 +29,9 @@ export class MapsPage {
       this._imageViewerCtrl = imageViewerCtrl;
 
       this.mapImages = [
-          {title: 'SITE MAP', image: "assets/images/maps/site_mapnew_logo.jpg"},
-          {title: 'SEATING CHART', image: "assets/images/maps/seating-chart.jpg"},
-          {title: 'PUBLIC PARKING AND PATHWAYS MAP', image: "assets/images/maps/Public-Parking-and-Pathways-Map.jpg"},
+          {title: 'SITE MAP', image: "assets/images/maps/2017-cwmp-map-01.svg"},
+          {title: 'SEATING CHART', image: "assets/images/maps/seating-map-public-01.svg"},
+          {title: 'PUBLIC PARKING & <br /> PATHWAYS MAP', image: "assets/images/maps/public-parking-and-pathways-map-01.svg"},
       ];
     /*this.apiProvider.getPage(this.path).subscribe(
         data => {
@@ -46,11 +46,6 @@ export class MapsPage {
         console.log(myImage);
         const imageViewer = this._imageViewerCtrl.create(myImage);
         imageViewer.present();
-        // const imageViewer = this._imageViewerCtrl.create(myImage);
-        // imageViewer.present();
-
-
-
         // if(this.platform.is('android') || this.platform.is('ios')) {
         //     this.photoViewer.show(myImage);
         // } else {

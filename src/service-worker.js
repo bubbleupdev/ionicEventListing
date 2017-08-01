@@ -20,7 +20,18 @@ self.toolbox.precache(
     'index.html',
     'manifest.json',
     'https://woodlandscenter.7.dev.bubbleup.com/api/v1/events',
-    'https://www.woodlandscenter.org/api/v1/events'
+    'https://woodlandscenter.7.dev.bubbleup.com/api/v1/events',
+    'https://woodlandscenter.7.dev.bubbleup.com/api/v1/pages?path=directions',
+    'https://woodlandscenter.7.dev.bubbleup.com/api/v1/pages?path=season-seats',
+    'https://woodlandscenter.7.dev.bubbleup.com/api/v1/pages?path=pavilion-rules',
+    'https://woodlandscenter.7.dev.bubbleup.com/api/v1/pages?path=parking',
+    'https://woodlandscenter.7.dev.bubbleup.com/api/v1/pages?path=venue-maps',
+    'https://www.woodlandscenter.org/api/v1/events',
+    'https://www.woodlandscenter.org/api/v1/pages?path=directions',
+    'https://www.woodlandscenter.org/api/v1/pages?path=season-seats',
+    'https://www.woodlandscenter.org/api/v1/pages?path=pavilion-rules',
+    'https://www.woodlandscenter.org/api/v1/pages?path=parking',
+    'https://www.woodlandscenter.org/api/v1/pages?path=venue-maps'
   ]
 );
 

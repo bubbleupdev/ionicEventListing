@@ -30,12 +30,12 @@ export class MapsPage {
           {title: 'SEATING CHART', image: "assets/images/maps/seating-chart.jpg"},
           {title: 'PUBLIC PARKING AND PATHWAYS MAP', image: "assets/images/maps/Public-Parking-and-Pathways-Map.jpg"},
       ];
-    this.apiProvider.getPage(this.path).subscribe(
+    /*this.apiProvider.getPage(this.path).subscribe(
         data => {
           this.page = data;
           console.log(this.page);
         }
-    );
+    );*/
   }
 
     presentImage(myImage) {

@@ -37,18 +37,7 @@ export class HomePage {
 	}
 
 	getEvents(){
-        // this.storage.get('events').then((data) => {
-        //     console.log("Getting Data"),
-        //         this.events = data;
-        // });
-        //
-        // if (this.events) {
-        //     console.log("Yes Events")
-        //     console.dir(this.events)
-        // }
-        //
-        // if (this.events!=null) {
-        //     console.log("Not Events");
+		try {
             this.service.getEvents()
                 .subscribe(
                     data => {
@@ -58,8 +47,23 @@ export class HomePage {
                             error => console.error('Failed to store Data')
                         );
                     }
-                )
-        // }
+                );
+
+			if(this.events===null) {
+                this.storage.get('events').then((data) => {
+                    console.log("Getting Data");
+                        this.events = data;
+                });
+            }
+
+            if (this.events) {
+                console.log("Yes Events")
+                console.dir(this.events)
+            }
+
+        } catch (e){
+			console.error("Something went wrong with event data. Error was", e);
+		}
 	}
 
 	doInfinite(e) {

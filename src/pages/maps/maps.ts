@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {ApiProvider} from "../../providers/api-provider";
 import {ImageViewerController} from "ionic-img-viewer";
+import {ImageZoomPage} from "../image-zoom/image-zoom";
 
 /**
  * Generated class for the MapsPage page.
@@ -39,8 +40,7 @@ export class MapsPage {
   }
 
     presentImage(myImage) {
-        const imageViewer = this._imageViewerCtrl.create(myImage);
-        imageViewer.present();
+        this.navCtrl.push(ImageZoomPage,{media:myImage});
     }
 
 }

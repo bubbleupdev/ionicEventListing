@@ -13,7 +13,7 @@
 
 <ion-content>
   <ion-card class="adv-map" *ngFor="let map of mapImages">
-    <ion-img [src]="map.image" cache imageViewer></ion-img>
+    <ion-img [src]="map.image" cache (click)="presentImage(map.image)"></ion-img>
     <ion-item>
       <h2 text-center>{{map.title}}</h2>
     </ion-item>

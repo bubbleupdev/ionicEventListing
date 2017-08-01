@@ -17,6 +17,7 @@ import {RulesPage} from "../pages/rules/rules";
 import {SeasonSeatsPage} from "../pages/season-seats/season-seats";
 import {IonicImageViewerModule} from "ionic-img-viewer";
 import {IonicStorageModule} from '@ionic/storage';
+import {ImageZoomPage} from "../pages/image-zoom/image-zoom";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {IonicStorageModule} from '@ionic/storage';
     ParkingPage,
     RulesPage,
     SeasonSeatsPage,
+    ImageZoomPage
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,7 @@ import {IonicStorageModule} from '@ionic/storage';
     ParkingPage,
     RulesPage,
     SeasonSeatsPage,
+    ImageZoomPage
   ],
   providers: [
     StatusBar,

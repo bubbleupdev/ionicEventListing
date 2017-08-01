@@ -18,11 +18,11 @@ export class DetailPage {
                 public navParams: NavParams,
                 public service: ApiProvider,
                 public loadingCtrl: LoadingController) {
-        let loading = this.loadingCtrl.create({
-            content: 'Please wait...'
-        });
-
-        loading.present();
+        // let loading = this.loadingCtrl.create({
+        //     content: 'Please wait...'
+        // });
+        //
+        // loading.present();
 
         this.event = this.navParams.get('event');
         console.dir(this.event);
@@ -31,7 +31,7 @@ export class DetailPage {
             this.page = this.event.page;
             this.eventDate = this.service.formatDate(this.event);
             this.eventTime = this.service.formatTime(this.event);
-            loading.dismiss();
+            // loading.dismiss();
         }
     }
 

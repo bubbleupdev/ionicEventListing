@@ -4,13 +4,13 @@ import { MapsPage } from './maps';
 
 @NgModule({
   declarations: [
-    MapsPage,
+    // MapsPage,
   ],
   imports: [
     IonicPageModule.forChild(MapsPage),
   ],
   exports: [
-    MapsPage
+    // MapsPage
   ]
 })
 export class MapsPageModule {}

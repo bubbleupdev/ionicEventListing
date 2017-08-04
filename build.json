@@ -1,0 +1,18 @@
+{
+  "android": {
+    "debug": {
+      "keystore": "newcwp.keystore",
+      "storePassword": "mM!6vQ2H",
+      "alias": "newcwp",
+      "password": "mM!6vQ2H",
+      "keystoreType": ""
+    },
+    "release": {
+      "keystore": "newcwp.keystore",
+      "storePassword": "mM!6vQ2H",
+      "alias": "newcwp",
+      "password": "mM!6vQ2H",
+      "keystoreType": ""
+    }
+  }
+}

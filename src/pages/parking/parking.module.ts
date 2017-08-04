@@ -4,13 +4,13 @@ import { ParkingPage } from './parking';
 
 @NgModule({
   declarations: [
-    ParkingPage,
+    // ParkingPage,
   ],
   imports: [
     IonicPageModule.forChild(ParkingPage),
   ],
   exports: [
-    ParkingPage
+    // ParkingPage
   ]
 })
 export class ParkingPageModule {}

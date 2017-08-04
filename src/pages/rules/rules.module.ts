@@ -4,13 +4,13 @@ import { RulesPage } from './rules';
 
 @NgModule({
   declarations: [
-    RulesPage,
+    // RulesPage,
   ],
   imports: [
     IonicPageModule.forChild(RulesPage),
   ],
   exports: [
-    RulesPage
+    // RulesPage
   ]
 })
 export class RulesPageModule {}

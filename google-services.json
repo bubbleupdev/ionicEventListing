@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "406620653991",
+    "firebase_url": "https://netbubbleuppavilion.firebaseio.com",
+    "project_id": "netbubbleuppavilion",
+    "storage_bucket": "netbubbleuppavilion.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406620653991:android:d670ccef01a91ae1",
+        "android_client_info": {
+          "package_name": "net.bubbleup.pavilion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406620653991-2e48gkr8udc83sknipf2h3fkgi9r2aad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATSF48jJLGCo1qxMYGELrOLv9sYW3t_Fc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406620653991:android:070ddc38448f6a80",
+        "android_client_info": {
+          "package_name": "net.bubbleup.cwpfriendfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406620653991-2e48gkr8udc83sknipf2h3fkgi9r2aad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATSF48jJLGCo1qxMYGELrOLv9sYW3t_Fc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

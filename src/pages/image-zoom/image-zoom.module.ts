@@ -4,7 +4,7 @@ import { ImageZoomPage } from './image-zoom';
 
 @NgModule({
   declarations: [
-    ImageZoomPage,
+    // ImageZoomPage,
   ],
   imports: [
     IonicPageModule.forChild(ImageZoomPage),

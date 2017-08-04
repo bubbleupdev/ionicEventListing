@@ -4,13 +4,13 @@ import { SeasonSeatsPage } from './season-seats';
 
 @NgModule({
   declarations: [
-    SeasonSeatsPage,
+    // SeasonSeatsPage,
   ],
   imports: [
     IonicPageModule.forChild(SeasonSeatsPage),
   ],
   exports: [
-    SeasonSeatsPage
+    // SeasonSeatsPage
   ]
 })
 export class SeasonSeatsPageModule {}

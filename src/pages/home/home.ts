@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, LoadingController, ModalController, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, LoadingController, ModalController, NavController, NavParams, Platform} from 'ionic-angular';
 import {ApiProvider} from "../../providers/api-provider";
 import {DetailPage} from "../detail-page/detail-page";
 import {Storage} from '@ionic/storage';
@@ -22,19 +22,25 @@ export class HomePage {
 				public service: ApiProvider,
 				public modalCtrl: ModalController,
                 private storage: Storage,
+				public platform: Platform,
 				// private moment: Moment,
 				public loadingCtrl: LoadingController,
                 public domSanitizer: DomSanitizer) {
 
-		let loading = this.loadingCtrl.create({
-			content: 'Please wait...'
-		});
-		loading.present();
+        this.platform.ready().then(() => {
+            let loading = this.loadingCtrl.create({
+                content: 'Please wait...'
+            });
 
-		console.log("home ts");
-		this.getEvents();
 
-        loading.dismiss();
+            loading.present();
+
+            console.log("home ts");
+            this.getEvents();
+
+            loading.dismiss();
+
+        });
 
 	}
 

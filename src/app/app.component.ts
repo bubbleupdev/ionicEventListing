@@ -10,6 +10,7 @@ import {ParkingPage} from "../pages/parking/parking";
 import {RulesPage} from "../pages/rules/rules";
 import {SeasonSeatsPage} from "../pages/season-seats/season-seats";
 
+declare var FCMPlugin;
 @Component({
   templateUrl: 'app.html'
 })
@@ -32,12 +33,32 @@ export class MyApp {
 
     platform.ready().then(() => {
       statusBar.styleLightContent();
-
+        this.initializePush();
     });
   }
 
   openPage(page) {
     this.nav.setRoot(page.component);
+  }
+
+  initializePush(){
+      FCMPlugin.getToken(
+          (t) => {
+              console.log(t);
+          },
+          (e) => {
+              console.log(e);
+          }
+      );
+
+      FCMPlugin.onNotification(
+          (data) => {
+              console.log(data);
+          },
+          (e) => {
+              console.log(e);
+          }
+      );
   }
 }
 

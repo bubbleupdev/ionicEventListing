@@ -19,6 +19,7 @@ import {IonicImageViewerModule} from "ionic-img-viewer";
 import {IonicStorageModule} from '@ionic/storage';
 import {ImageZoomPage} from "../pages/image-zoom/image-zoom";
 import {PhotoViewer} from "@ionic-native/photo-viewer";
+import {TabsPage} from "../pages/tabs/tabs";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {PhotoViewer} from "@ionic-native/photo-viewer";
     ParkingPage,
     RulesPage,
     SeasonSeatsPage,
-    ImageZoomPage
+    ImageZoomPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import {PhotoViewer} from "@ionic-native/photo-viewer";
     ParkingPage,
     RulesPage,
     SeasonSeatsPage,
-    ImageZoomPage
+    ImageZoomPage,
+    TabsPage
   ],
   providers: [
     StatusBar,

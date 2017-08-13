@@ -16,7 +16,7 @@
 // automatically applied to the <body> element in the app.
 
 //TODO hide when compiling ios app
-.platform-ios.platform-mobileweb .app-root {
+.platform-ios.platform-mobileweb .app-root ion-header{
   margin-top: 20px;
 }
 
@@ -72,7 +72,8 @@ ion-content .content-md {
 
 ion-navbar.toolbar,
 .ios ion-nav > .ion-page > ion-header > .toolbar.statusbar-padding:first-child {
-  min-height: 75px;
+  //min-height: 75px;
+  min-height: 7rem !important;
 }
 
 

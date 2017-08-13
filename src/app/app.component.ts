@@ -9,6 +9,7 @@ import {DirectionsPage} from "../pages/directions/directions";
 import {ParkingPage} from "../pages/parking/parking";
 import {RulesPage} from "../pages/rules/rules";
 import {SeasonSeatsPage} from "../pages/season-seats/season-seats";
+import {TabsPage} from "../pages/tabs/tabs";
 
 @Component({
   templateUrl: 'app.html'
@@ -16,7 +17,7 @@ import {SeasonSeatsPage} from "../pages/season-seats/season-seats";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage:any = HomePage;
+  rootPage:any = TabsPage;
 
   pages: Array<{ title: string, component: any, icon: any }>;
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {

@@ -21,6 +21,7 @@ import {ImageZoomPage} from "../pages/image-zoom/image-zoom";
 import {PhotoViewer} from "@ionic-native/photo-viewer";
 import {TabsPage} from "../pages/tabs/tabs";
 import {Push} from "@ionic-native/push";
+import {FirebaseAnalytics} from "@ionic-native/firebase-analytics";
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import {Push} from "@ionic-native/push";
     ApiProvider,
     PhotoViewer,
     Push,
+    FirebaseAnalytics,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

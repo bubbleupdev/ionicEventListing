@@ -1,5 +1,8 @@
 {
-  "name": "cwp_listing2",
+  "name": "The Pavilion",
   "app_id": "ea1bfcff",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

@@ -63,15 +63,13 @@ export class HomePage {
     }
   }
   doRefresh(refresher) {
-    console.log("Do Refresh");
-    console.log(refresher);
     this.loading = this.loadingCtrl.create({
       content: 'Please wait...'
     });
     // this.loading.present();
     this.getEvents();
+
     setTimeout(() => {
-      console.log('Async operation has ended');
       refresher.complete();
     }, 2000);
   }

@@ -38,7 +38,10 @@ export class MapsPage {
       {title: 'SEATING CHART', image: "assets/images/maps/seating-map-public-01.svg"},
       {title: 'PUBLIC PARKING & <br /> PATHWAYS MAP', image: "assets/images/maps/public-parking-and-pathways-map-01.svg"},
     ];
-    this.loading.dismiss();
+
+    setTimeout(() => {
+      this.loading.dismiss();
+    }, 2000);
 
     /*this.apiProvider.getPage(this.path).subscribe(
         data => {

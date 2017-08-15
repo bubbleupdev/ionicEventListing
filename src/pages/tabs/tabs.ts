@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage} from 'ionic-angular';
 import {HomePage} from "../home/home";
 import {MapsPage} from "../maps/maps";
 import {DirectionsPage} from "../directions/directions";
 import {ParkingPage} from "../parking/parking";
-import {RulesPage} from "../rules/rules";
-import {SeasonSeatsPage} from "../season-seats/season-seats";
 
 
 @IonicPage()
@@ -14,17 +12,16 @@ import {SeasonSeatsPage} from "../season-seats/season-seats";
   templateUrl: 'tabs.html',
 })
 export class TabsPage {
-
+  ion
   public tabs: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-      console.log("Tabs Page");
-      this.tabs = [
-          {title: 'Events', component: HomePage, icon: 'calendar'},
-          {title: 'Directions', component: DirectionsPage, icon: 'compass'},
-          {title: 'Parking', component: ParkingPage, icon: 'car'},
-          {title: 'Maps', component: MapsPage, icon: 'map'}
-      ];
+  constructor() {
+    this.tabs = [
+      {title: 'Events', component: HomePage, icon: 'calendar'},
+      {title: 'Directions', component: DirectionsPage, icon: 'compass'},
+      {title: 'Parking', component: ParkingPage, icon: 'car'},
+      {title: 'Maps', component: MapsPage, icon: 'map'}
+    ];
   }
 
 

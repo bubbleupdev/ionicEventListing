@@ -10,29 +10,29 @@ import {DomSanitizer} from "@angular/platform-browser";
 })
 export class DetailPage {
 
-    public event: any = null;
-    public page: any = null;
-    public eventDate: string = null;
-    public eventTime: string = null;
+  public event: any = null;
+  public page: any = null;
+  public eventDate: string = null;
+  public eventTime: string = null;
 
-    constructor(public navCtrl: NavController,
-                public navParams: NavParams,
-                public service: ApiProvider,
-                public domSanitizer: DomSanitizer) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public service: ApiProvider,
+              public domSanitizer: DomSanitizer) {
 
-        this.event = this.navParams.get('event');
-        console.dir(this.event);
+    this.event = this.navParams.get('event');
+    console.dir(this.event);
 
-        if (this.event) {
-            this.page = this.event.page;
-            this.eventDate = this.service.formatDate(this.event);
-            this.eventTime = this.service.formatTime(this.event);
-            // loading.dismiss();
-        }
+    if (this.event) {
+      this.page = this.event.page;
+      this.eventDate = this.service.formatDate(this.event);
+      this.eventTime = this.service.formatTime(this.event);
+      // loading.dismiss();
     }
+  }
 
-    openUrl(path) {
-        window.open(path, '_system');
-    }
+  openUrl(path) {
+    window.open(path, '_system');
+  }
 
 }

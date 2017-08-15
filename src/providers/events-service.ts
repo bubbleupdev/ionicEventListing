@@ -20,7 +20,7 @@ export class EventsService {
     if (this.data) {
       return Promise.resolve(this.data);
     }
-  
+
 
     return new Promise(resolve => {
       this.http.get('https://woodlandscenter.dev.busites.com/app-api/events?_format=json')

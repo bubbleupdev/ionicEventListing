@@ -20,6 +20,7 @@ import {IonicStorageModule} from '@ionic/storage';
 import {ImageZoomPage} from "../pages/image-zoom/image-zoom";
 import {PhotoViewer} from "@ionic-native/photo-viewer";
 import {TabsPage} from "../pages/tabs/tabs";
+import {Push} from "@ionic-native/push";
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import {TabsPage} from "../pages/tabs/tabs";
     SplashScreen,
     ApiProvider,
     PhotoViewer,
+    Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

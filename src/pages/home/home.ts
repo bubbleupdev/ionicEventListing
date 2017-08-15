@@ -5,6 +5,7 @@ import {DetailPage} from "../detail-page/detail-page";
 import {Storage} from '@ionic/storage';
 import {DomSanitizer} from "@angular/platform-browser";
 import * as moment from "moment";
+import {FirebaseAnalytics} from "@ionic-native/firebase-analytics";
 
 @IonicPage()
 @Component({
@@ -22,6 +23,7 @@ export class HomePage {
               public modalCtrl: ModalController,
               private storage: Storage,
               public loadingCtrl: LoadingController,
+              private firebaseAnalytics: FirebaseAnalytics,
               public domSanitizer: DomSanitizer) {
 
     this.loading = this.loadingCtrl.create({
@@ -75,8 +77,9 @@ export class HomePage {
     window.open(path, '_system');
   }
 
-  openDetailPage(path) {
-    this.navCtrl.push(DetailPage,{event:path});
+  openDetailPage(data) {
+    this.firebaseAnalytics.logEvent('page_view',data.page.title);
+    this.navCtrl.push(DetailPage,{event:data});
   }
 
 }

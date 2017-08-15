@@ -10,9 +10,10 @@
 </ion-header>
 
 <ion-content class="has-header">
-  <!--<ion-list [virtualScroll]="this.events" [approxItemHeight]="'480px'" no-lines>-->
+  <ion-refresher (ionRefresh)="doRefresh($event);">
+    <ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="circles"></ion-refresher-content>
+  </ion-refresher>
   <ion-list no-lines>
-    <!--<ion-item *virtualItem="let data" class="event-item">-->
     <ion-item *ngFor="let data of this.events" class="event-item">
       <ion-grid>
         <ion-row justify-content-center>

@@ -62,6 +62,19 @@ export class HomePage {
       console.error("Something went wrong with event data. Error was", e);
     }
   }
+  doRefresh(refresher) {
+    console.log("Do Refresh");
+    console.log(refresher);
+    this.loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+    // this.loading.present();
+    this.getEvents();
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
 
   formatDate(event) {
 

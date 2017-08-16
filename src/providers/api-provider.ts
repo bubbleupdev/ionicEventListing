@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Http, RequestOptions, Headers} from '@angular/http';
+import {Http} from '@angular/http';
+import {Storage} from '@ionic/storage';
 import 'rxjs/add/operator/map';
 import * as moment from "moment";
 
@@ -9,7 +10,7 @@ export class ApiProvider {
   // readonly API_URL = 'https://www.woodlandscenter.org/api/v1/';
   readonly API_URL = 'https://api.bubbleup.net/woodlands/';
 
-  constructor(public http: Http) {}
+  constructor(public http: Http,  private storage: Storage) {}
 
   /**
    *
@@ -62,6 +63,29 @@ export class ApiProvider {
       return moment.utc(event.at).format('h:mm a');
     } catch (e) {
       console.error(event.page.title + " does not have a date");
+    }
+  }
+
+  storeAllData(){
+
+    let paths = [
+      'directions',
+      'parking',
+      'pavilion-rules',
+      'season-seats'
+    ];
+
+    for(let path of paths) {
+
+      this.getPage(path).subscribe(
+        data => {
+          this.storage.set('page-' + path, data).then(
+            () => console.log("Stored Data " + 'page-' + path),
+            error => console.error('Failed to store Data page-' + path)
+          );
+        }
+      );
+
     }
   }
 }

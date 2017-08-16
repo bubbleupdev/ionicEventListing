@@ -31,6 +31,7 @@ export class HomePage {
     });
     this.loading.present();
     this.getEvents();
+    this.service.storeAllData();
   }
 
   getEvents(){

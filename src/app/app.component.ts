@@ -23,6 +23,8 @@ export class MyApp {
 
   pages: Array<{ title: string, component: any, icon: any }>;
 
+  pushObject: PushObject;
+
   constructor(public platform: Platform,
               public statusBar: StatusBar,
               public splashScreen: SplashScreen,
@@ -38,18 +40,6 @@ export class MyApp {
       {title: 'Season Seats', component: SeasonSeatsPage, icon: 'calendar'},
     ];
 
-    platform.ready().then(() => {
-      statusBar.styleLightContent();
-      this.pushsetup();
-    });
-  }
-
-  openPage(page) {
-    this.nav.push(page.component);
-  }
-  pushsetup() {
-    console.log("Setup Push Notifications");
-
     const options: PushOptions = {
       android: {
         senderID: '406620653991'
@@ -62,9 +52,41 @@ export class MyApp {
       windows: {}
     };
 
-    const pushObject: PushObject = this.push.init(options);
+    this.pushObject = this.push.init(options);
 
-    pushObject.on('notification').subscribe((notification: any) => {
+
+    platform.ready().then(() => {
+      statusBar.styleLightContent();
+      this.push.hasPermission()
+        .then((res: any) => {
+
+          if (res.isEnabled) {
+            console.log('We have permission to send push notifications');
+          } else {
+            console.log('We do not have permission to send push notifications');
+          }
+
+        });
+
+      this.pushsetup();
+
+    });
+
+  }
+
+  openPage(page) {
+
+    this.nav.push(page.component);
+  }
+
+  pushsetup() {
+    if (!this.platform.is('cordova')) {
+      console.warn('Push notifications not initialized. Cordova is not available - Run in physical device');
+      return;
+    }
+    console.log("Setup Push Notifications");
+
+    this.pushObject.on('notification').subscribe((notification: any) => {
       if (notification.additionalData.foreground) {
         let pushAlert = this.alertCtrl.create({
           title: notification.title,
@@ -74,16 +96,20 @@ export class MyApp {
       }
     });
 
-    pushObject.on('registration').subscribe((registration: any) => {
+    this.pushObject.on('registration').subscribe((registration: any) => {
       console.dir(registration);
       //do whatever you want with the registration ID
     });
 
-    pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));
+    this.pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));
+
 
   }
   togglePush() {
+    console.log("Unregister");
 
+    this.pushObject.unregister().then((data:any)=>console.dir({data:data,message:"Unregistered"}));
+    this.push.hasPermission().then((res:any)=>console.log(res));
   }
 }
 

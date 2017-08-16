@@ -1,10 +1,14 @@
 <ion-menu [content]="content">
 	<ion-content>
+    <div id="sideBanner">
+      <img src="assets/images/logo.png" alt="The Woodlands Pavilion Center">
+    </div>
 		<ion-list>
-			<button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-				<!--<ion-icon [name]='p.icon' item-left></ion-icon>-->
+			<button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+				<ion-icon [name]='p.icon' item-left></ion-icon>
 				{{p.title}}
 			</button>
+      <!--<button ion-item (click)="togglePush()"></button>-->
 		</ion-list>
 	</ion-content>
 

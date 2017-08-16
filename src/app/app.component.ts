@@ -47,7 +47,6 @@ export class MyApp {
   openPage(page) {
     this.nav.push(page.component);
   }
-
   pushsetup() {
     console.log("Setup Push Notifications");
 
@@ -81,6 +80,10 @@ export class MyApp {
     });
 
     pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));
+
+  }
+  togglePush() {
+
   }
 }
 

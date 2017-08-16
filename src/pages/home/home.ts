@@ -43,7 +43,10 @@ export class HomePage {
               () => console.log("Stored Data"),
               error => console.error('Failed to store Data')
             );
-            this.loading.dismiss();
+            if(this.loading){
+              this.loading.dismiss();
+              this.loading = null;
+            }
           }
         );
 
@@ -51,10 +54,16 @@ export class HomePage {
         this.storage.get('events').then((data) => {
           console.log("Getting Data");
           this.events = data;
-          this.loading.dismiss();
+          if(this.loading){
+            this.loading.dismiss();
+            this.loading = null;
+          }
         }).catch(error=>{
           alert("No Network");
-          this.loading.dismiss();
+          if(this.loading){
+            this.loading.dismiss();
+            this.loading = null;
+          }
         });
       }
 

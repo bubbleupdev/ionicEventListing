@@ -40,8 +40,11 @@ export class MapsPage {
     ];
 
     setTimeout(() => {
-      this.loading.dismiss();
-    }, 2000);
+      if(this.loading){
+        this.loading.dismiss();
+        this.loading = null;
+      }
+    }, 200);
 
     /*this.apiProvider.getPage(this.path).subscribe(
         data => {

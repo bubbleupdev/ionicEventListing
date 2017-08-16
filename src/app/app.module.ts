@@ -38,7 +38,7 @@ import {FirebaseAnalytics} from "@ionic-native/firebase-analytics";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{tabsPlacement:'bottom'}),
     IonicStorageModule.forRoot(),
     HttpModule,
     IonicImageViewerModule

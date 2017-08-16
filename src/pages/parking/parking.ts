@@ -33,14 +33,20 @@ export class ParkingPage {
             () => console.log("Stored Data " + 'page-' + this.path),
             error => console.error('Failed to store Data page-' + this.path)
           );
-          this.loading.dismiss();
+          if(this.loading){
+            this.loading.dismiss();
+            this.loading = null;
+          }
         }
       );
 
       if (this.page === null) {
         this.storage.get('page-' + this.path).then((data) => {
           this.page = data;
-          this.loading.dismiss();
+          if(this.loading){
+            this.loading.dismiss();
+            this.loading = null;
+          }
         });
       }
 

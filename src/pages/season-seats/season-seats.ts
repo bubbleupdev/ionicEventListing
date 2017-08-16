@@ -39,7 +39,10 @@ export class SeasonSeatsPage {
             error => console.error('Failed to store Data page-' + this.path)
           );
 
-          this.loading.dismiss();
+          if(this.loading){
+            this.loading.dismiss();
+            this.loading = null;
+          }
         }
       );
 
@@ -47,10 +50,16 @@ export class SeasonSeatsPage {
         this.storage.get('page-' + this.path).then((data) => {
           this.page = data;
           this.replaceHtml(this.page);
-          this.loading.dismiss();
+          if(this.loading){
+            this.loading.dismiss();
+            this.loading = null;
+          }
         }).catch(error => {
             console.error(error);
+          if(this.loading){
             this.loading.dismiss();
+            this.loading = null;
+          }
           }
         );
       }

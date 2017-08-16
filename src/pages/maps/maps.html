@@ -4,14 +4,20 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      <span>The Cynthia Woods <br />Mitchell Pavilion</span>
-      <span>Maps</span>
+      <img src="assets/images/logo.svg" alt="The Cynthia Woods Mitchell Pavilion">
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h1>Maps</h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <ion-card class="adv-map" *ngFor="let map of mapImages">
     <img [src]="map.image" class="thumbnail" imageViewer/>
     <ion-icon name="search" class="img-zoom-icon"></ion-icon>

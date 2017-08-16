@@ -4,14 +4,18 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      <span>The Cynthia Woods <br />Mitchell Pavilion</span>
-      <span>Season Seats</span>
+      <img src="assets/images/logo.svg" alt="The Cynthia Woods Mitchell Pavilion">
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-grid *ngIf="this.page">
+    <ion-row>
+      <ion-col>
+        <h1>Season Seats</h1>
+      </ion-col>
+    </ion-row>
     <ion-row>
       <ion-col class="page-html" col-auto [innerHTML]="this.domSanitizer.bypassSecurityTrustHtml(page.html)"></ion-col>
     </ion-row>

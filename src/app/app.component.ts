@@ -2,11 +2,6 @@ import {Component, ViewChild} from '@angular/core';
 import {AlertController, Nav, Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
-
-import {HomePage} from '../pages/home/home';
-import {MapsPage} from "../pages/maps/maps";
-import {DirectionsPage} from "../pages/directions/directions";
-import {ParkingPage} from "../pages/parking/parking";
 import {RulesPage} from "../pages/rules/rules";
 import {SeasonSeatsPage} from "../pages/season-seats/season-seats";
 import {TabsPage} from "../pages/tabs/tabs";
@@ -59,13 +54,11 @@ export class MyApp {
       statusBar.styleLightContent();
       this.push.hasPermission()
         .then((res: any) => {
-
           if (res.isEnabled) {
             console.log('We have permission to send push notifications');
           } else {
             console.log('We do not have permission to send push notifications');
           }
-
         });
 
       this.pushsetup();
@@ -84,7 +77,6 @@ export class MyApp {
       console.warn('Push notifications not initialized. Cordova is not available - Run in physical device');
       return;
     }
-    console.log("Setup Push Notifications");
 
     this.pushObject.on('notification').subscribe((notification: any) => {
       if (notification.additionalData.foreground) {
@@ -97,19 +89,23 @@ export class MyApp {
     });
 
     this.pushObject.on('registration').subscribe((registration: any) => {
-      console.dir(registration);
+      // console.dir(registration);
       //do whatever you want with the registration ID
     });
 
-    this.pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));
+    this.pushObject.on('error').subscribe(error =>
+      console.error('Error with Push plugin ' + error)
+    );
 
 
   }
   togglePush() {
-    console.log("Unregister");
-
-    this.pushObject.unregister().then((data:any)=>console.dir({data:data,message:"Unregistered"}));
-    this.push.hasPermission().then((res:any)=>console.log(res));
+    this.pushObject.unregister().then(
+      (data:any)=>console.dir({data:data,message:"Unregistered"})
+    );
+    this.push.hasPermission().then(
+      (res:any)=>console.log(res)
+    );
   }
 }
 

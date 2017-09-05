@@ -2,7 +2,6 @@ import {Component, ViewChild} from '@angular/core';
 import {AlertController, Nav, Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
-import {RulesPage} from "../pages/rules/rules";
 import {SeasonSeatsPage} from "../pages/season-seats/season-seats";
 import {TabsPage} from "../pages/tabs/tabs";
 import {Push, PushObject, PushOptions} from '@ionic-native/push';
@@ -14,11 +13,9 @@ import {Push, PushObject, PushOptions} from '@ionic-native/push';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = TabsPage;
-
-  pages: Array<{ title: string, component: any, icon: any }>;
-
-  pushObject: PushObject;
+  public rootPage: any = TabsPage;
+  public pages: Array<{ title: string, component: any, icon: any }>;
+  public pushObject: PushObject;
 
   constructor(public platform: Platform,
               public statusBar: StatusBar,
@@ -31,8 +28,11 @@ export class MyApp {
       // {title: 'Directions', component: DirectionsPage, icon: 'compass'},
       // {title: 'Parking', component: ParkingPage, icon: 'car'},
       // {title: 'Maps', component: MapsPage, icon: 'map'},
-      {title: 'Rules', component: RulesPage, icon: 'information-circle'},
+      // {title: 'Rules', component: RulesPage, icon: 'information-circle'},
       {title: 'Season Seats', component: SeasonSeatsPage, icon: 'calendar'},
+      // {title: 'Mission', component: MissionPage, icon: ''},
+      // {title: 'About', component: AboutPage, icon: ''},
+      // {title: 'Education', component: EducationPage, icon: 'information-circle'},
     ];
 
     const options: PushOptions = {
@@ -49,29 +49,24 @@ export class MyApp {
 
     this.pushObject = this.push.init(options);
 
-
     platform.ready().then(() => {
       statusBar.styleLightContent();
-      this.push.hasPermission()
-        .then((res: any) => {
-          if (res.isEnabled) {
-            console.log('We have permission to send push notifications');
-          } else {
-            console.log('We do not have permission to send push notifications');
-          }
-        });
-
       this.pushsetup();
-
     });
 
   }
 
+  /**
+   * This opens specific page
+   * @param page
+   */
   openPage(page) {
-
     this.nav.push(page.component);
   }
 
+  /**
+   * Thi Completes Push Setup
+   */
   pushsetup() {
     if (!this.platform.is('cordova')) {
       console.warn('Push notifications not initialized. Cordova is not available - Run in physical device');
@@ -99,6 +94,19 @@ export class MyApp {
 
 
   }
+
+  checkPushPermissions(){
+    this.push.hasPermission()
+      .then((res: any) => {
+        if (res.isEnabled) {
+          console.log('We have permission to send push notifications');
+        } else {
+          console.log('We do not have permission to send push notifications');
+        }
+      });
+  }
+
+
   togglePush() {
     this.pushObject.unregister().then(
       (data:any)=>console.dir({data:data,message:"Unregistered"})

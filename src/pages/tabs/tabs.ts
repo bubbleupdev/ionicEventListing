@@ -3,7 +3,7 @@ import {IonicPage} from 'ionic-angular';
 import {HomePage} from "../home/home";
 import {MapsPage} from "../maps/maps";
 import {DirectionsPage} from "../directions/directions";
-import {ParkingPage} from "../parking/parking";
+import {RulesPage} from "../rules/rules";
 
 
 @IonicPage()
@@ -12,14 +12,12 @@ import {ParkingPage} from "../parking/parking";
   templateUrl: 'tabs.html',
 })
 export class TabsPage {
-  ion
   public tabs: any;
-
   constructor() {
     this.tabs = [
       {title: 'Events', component: HomePage, icon: 'calendar'},
       {title: 'Directions', component: DirectionsPage, icon: 'compass'},
-      {title: 'Parking', component: ParkingPage, icon: 'car'},
+      {title: 'Rules', component: RulesPage, icon: 'information-circle'},
       {title: 'Maps', component: MapsPage, icon: 'map'}
     ];
   }

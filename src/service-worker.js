@@ -31,7 +31,10 @@ self.toolbox.precache(
     'https://www.woodlandscenter.org/api/v1/pages?path=season-seats',
     'https://www.woodlandscenter.org/api/v1/pages?path=pavilion-rules',
     'https://www.woodlandscenter.org/api/v1/pages?path=parking',
-    'https://www.woodlandscenter.org/api/v1/pages?path=venue-maps'
+    'https://www.woodlandscenter.org/api/v1/pages?path=venue-maps',
+    'https://s3.amazonaws.com/busites-www/woodlandscenterapp/maps/2017-cwmp-map-01.svg',
+    'https://s3.amazonaws.com/busites-www/woodlandscenterapp/maps/seating-map-public-01.svg',
+    'https://s3.amazonaws.com/busites-www/woodlandscenterapp/maps/public-parking-and-pathways-map-01.svg',
   ]
 );
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, LoadingController, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavParams} from 'ionic-angular';
 import {ApiProvider} from "../../providers/api-provider";
 import {DomSanitizer} from "@angular/platform-browser";
 
@@ -15,7 +15,7 @@ export class DetailPage {
   public eventDate: string = null;
   public eventTime: string = null;
 
-  constructor(public navCtrl: NavController,
+  constructor(
               public navParams: NavParams,
               public service: ApiProvider,
               public domSanitizer: DomSanitizer) {
@@ -27,7 +27,6 @@ export class DetailPage {
       this.page = this.event.page;
       this.eventDate = this.service.formatDate(this.event);
       this.eventTime = this.service.formatTime(this.event);
-      // loading.dismiss();
     }
   }
 

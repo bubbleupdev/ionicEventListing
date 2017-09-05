@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, Loading, LoadingController, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, Loading, LoadingController, NavController} from 'ionic-angular';
 import {ApiProvider} from "../../providers/api-provider";
 import {Storage} from '@ionic/storage';
 import {ImageZoomPage} from "../image-zoom/image-zoom";
@@ -20,7 +20,6 @@ export class SeasonSeatsPage {
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams,
     public apiProvider: ApiProvider,
     private storage:Storage,
     public loadingCtrl: LoadingController,
@@ -71,8 +70,6 @@ export class SeasonSeatsPage {
 
   presentImage() {
     var myImage = "https://s3.amazonaws.com/busites_www/woodlandscenter2016com/pages/meta/1/1/2017_seating_chart_1480437343.jpg";
-    // console.log("presentImage");
-    // console.log(myImage);
     this.navCtrl.push(ImageZoomPage, {media: myImage});
   }
 
@@ -81,9 +78,7 @@ export class SeasonSeatsPage {
    * @param page
    */
   replaceHtml(page) {
-    // var html = '<a class="btn btn-primary" data-toggle="modal" href="#seating-chart">Click To Enlarge</a>';
-    // var newHtml = '<a class="btn btn-primary" href="#seating-chart" (click)="presentImage()">Click To Enlarge Replaced</a>';
-    // var newHtml = '<button full="" ion-button="" class="disable-hover button button-ios button-default button-default-ios button-full button-full-ios activated" ng-reflect-full="" onclick="presentImage()"><span class="button-inner">Click To Enlarge</span><div class="button-effect"></div></button>'
+
     var html = '<img src="https://s3.amazonaws.com/busites_www/woodlandscenter2016com/pages/meta/1/1/2017_seating_chart_1480437343.jpg" class="img-responsive map-thumbnail" alt="Pavilion Seating Chart" "="">'
     var newHtml = '';
     page.html = page.html.replace(html, newHtml);

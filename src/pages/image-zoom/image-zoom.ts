@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {IonicPage, Platform, NavController, NavParams, ViewController} from 'ionic-angular';
+import {IonicPage, Platform, NavParams, ViewController} from 'ionic-angular';
 import {Gesture} from 'ionic-angular'
 
 
@@ -32,7 +32,6 @@ export class ImageZoomPage {
     public mediaLoaded: boolean = false;
 
     constructor(public platform: Platform,
-                public navCtrl: NavController,
                 public navParams: NavParams,
                 public viewCtrl: ViewController) {
         this.media = this.navParams.get("media");

@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
-import {IonicPage, Loading, LoadingController, NavController, NavParams, Platform} from 'ionic-angular';
-import {ApiProvider} from "../../providers/api-provider";
+import {IonicPage, Loading, LoadingController} from 'ionic-angular';
 import {ImageViewerController} from "ionic-img-viewer";
-import {ImageZoomPage} from "../image-zoom/image-zoom";
-import {PhotoViewer} from '@ionic-native/photo-viewer';
 import {DomSanitizer} from "@angular/platform-browser";
 
 
@@ -19,14 +16,11 @@ export class MapsPage {
   // private path: string = "venue-maps";
   public loading: Loading;
 
-  constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              public apiProvider: ApiProvider,
-              private photoViewer: PhotoViewer,
-              private platform: Platform,
+  constructor(
               public domSanitizer: DomSanitizer,
               public loadingCtrl: LoadingController,
-              imageViewerCtrl: ImageViewerController) {
+              imageViewerCtrl: ImageViewerController
+  ) {
     this.loading = this.loadingCtrl.create({
       content: 'Please wait...'
     });
@@ -34,9 +28,9 @@ export class MapsPage {
     this._imageViewerCtrl = imageViewerCtrl;
 
     this.mapImages = [
-      {title: 'SITE MAP', image: "assets/images/maps/2017-cwmp-map-01.svg"},
-      {title: 'SEATING CHART', image: "assets/images/maps/seating-map-public-01.svg"},
-      {title: 'PUBLIC PARKING & <br /> PATHWAYS MAP', image: "assets/images/maps/public-parking-and-pathways-map-01.svg"},
+      {title: 'VENUE MAP', image: "https://s3.amazonaws.com/busites-www/woodlandscenterapp/maps/2017-cwmp-map-01.svg"},
+      {title: 'SEATING CHART', image: "https://s3.amazonaws.com/busites-www/woodlandscenterapp/maps/seating-map-public-01.svg"},
+      {title: 'PUBLIC PARKING & <br /> PATHWAYS MAP', image: "https://s3.amazonaws.com/busites-www/woodlandscenterapp/maps/public-parking-and-pathways-map-01.svg"},
     ];
 
     setTimeout(() => {
@@ -45,13 +39,6 @@ export class MapsPage {
         this.loading = null;
       }
     }, 200);
-
-    /*this.apiProvider.getPage(this.path).subscribe(
-        data => {
-          this.page = data;
-          console.log(this.page);
-        }
-    );*/
   }
 
   presentImage(myImage) {
@@ -59,12 +46,6 @@ export class MapsPage {
     console.log(myImage);
     const imageViewer = this._imageViewerCtrl.create(myImage);
     imageViewer.present();
-    // if(this.platform.is('android') || this.platform.is('ios')) {
-    //     this.photoViewer.show(myImage);
-    // } else {
-    //     this.navCtrl.push(ImageZoomPage, {media: myImage});
-    // }
-
   }
 
 }

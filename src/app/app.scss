@@ -17,7 +17,7 @@
 
 //TODO hide when compiling ios app
 .platform-ios.platform-mobileweb .app-root ion-header{
-  margin-top: 20px;
+  //margin-top: 20px;
 }
 
 .hidden {
@@ -61,7 +61,7 @@ ion-header button ion-icon {
 ion-menu {
   .scroll-content {
     background-color: #ffffff;
-    padding: 0 15px;
+    padding: 0 15px !important;
   }
 }
 
@@ -176,3 +176,63 @@ button.button-md {
 .widget {
   display: none;
 }
+.nav{
+  display: none;
+}
+a.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 16px;
+  border-radius: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #0241aa;
+  border-color: #023791;
+}
+
+a[href="#parking"] {
+  display: none
+}
+
+
+// ACCORDING
+ion-content {
+  .panel-title {
+    a {
+      text-decoration: none;
+      touch-action: none;
+    }
+  }
+}
+
+
+/**
+css rules for ipad
+ */
+@media all and (min-width: 765px) {
+  ion-title {
+    .toolbar-title {
+      img {
+        width: 250px;
+      }
+    }
+  }
+}
+

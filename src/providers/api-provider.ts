@@ -4,10 +4,8 @@ import {Storage} from '@ionic/storage';
 import 'rxjs/add/operator/map';
 import * as moment from "moment";
 
-
 @Injectable()
 export class ApiProvider {
-  // readonly API_URL = 'https://www.woodlandscenter.org/api/v1/';
   readonly API_URL = 'https://api.bubbleup.net/woodlands/';
 
   constructor(public http: Http,  private storage: Storage) {}
@@ -47,7 +45,7 @@ export class ApiProvider {
   formatDate(event) {
 
     try {
-      return moment(event.at).format('dddd MMMM Do');
+      return moment.utc(event.at).local().format('dddd MMMM Do');
     } catch (e) {
       console.error(event.page.title + " does not have a date");
     }
@@ -60,7 +58,7 @@ export class ApiProvider {
    */
   formatTime(event) {
     try {
-      return moment.utc(event.at).format('h:mm a');
+      return moment.utc(event.at).local().format('h:mm a');
     } catch (e) {
       console.error(event.page.title + " does not have a date");
     }

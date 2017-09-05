@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, Loading, LoadingController, ModalController, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, Loading, LoadingController, NavController, NavParams, Platform} from 'ionic-angular';
 import {ApiProvider} from "../../providers/api-provider";
 import {DetailPage} from "../detail-page/detail-page";
 import {Storage} from '@ionic/storage';
@@ -15,12 +15,15 @@ import {FirebaseAnalytics} from "@ionic-native/firebase-analytics";
 })
 export class HomePage {
   public events:any = null;
-  public loading:any;
+  public loading:Loading;
+  public directionsUrl: string ='https://maps.apple.com/?daddr=30.1609391,-95.4626832';
+  public eventDate: string = null;
+  public eventTime: string = null;
 
   constructor(public navCtrl: NavController,
               public navparams: NavParams,
+              public platform: Platform,
               public service: ApiProvider,
-              public modalCtrl: ModalController,
               private storage: Storage,
               public loadingCtrl: LoadingController,
               private firebaseAnalytics: FirebaseAnalytics,
@@ -32,6 +35,7 @@ export class HomePage {
     this.loading.present();
     this.getEvents();
     this.service.storeAllData();
+    this.getDirections();
   }
 
   getEvents(){
@@ -101,6 +105,18 @@ export class HomePage {
   openDetailPage(data) {
     this.firebaseAnalytics.logEvent('page_view',data.page.title);
     this.navCtrl.push(DetailPage,{event:data});
+  }
+
+  getDirections() {
+
+    if(this.platform.is('ios')){
+      // this.directionsUrl = 'maps:?daddr=30.1587681,-95.469625';
+      this.directionsUrl = 'maps:?daddr=30.1609391,-95.4626832';
+    }
+    if(this.platform.is('android')){
+      this.directionsUrl = 'geo:?daddr=30.1609391,-95.4626832';
+    }
+
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, Loading, LoadingController, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, Loading, LoadingController} from 'ionic-angular';
 import {ApiProvider} from "../../providers/api-provider";
 import {Storage} from '@ionic/storage';
 
@@ -15,8 +15,6 @@ export class ParkingPage {
   public loading: Loading;
 
   constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
     public apiProvider: ApiProvider,
     public loadingCtrl: LoadingController,
     private storage: Storage

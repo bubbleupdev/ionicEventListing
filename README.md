@@ -1,7 +1,7 @@
 ## Woodlands Center Pavilion Application
 
-<img src="evenlisting.jpg" alt="Screenshot Home" with="250px">
-<img src="maps.jpg" alt="Screenshot Maps" with="250px">
+<img src="evenlisting.jpg" alt="Screenshot Home" with="250px" style="max-width: 50%">
+<img src="maps.jpg" alt="Screenshot Maps" with="250px" style="max-width: 50%">
 
 ### With the Ionic CLI:
 ```bash

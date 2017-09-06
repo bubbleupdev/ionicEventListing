@@ -22,6 +22,9 @@ import {PhotoViewer} from "@ionic-native/photo-viewer";
 import {TabsPage} from "../pages/tabs/tabs";
 import {Push} from "@ionic-native/push";
 import {FirebaseAnalytics} from "@ionic-native/firebase-analytics";
+import {MissionPageModule} from "../pages/mission/mission.module";
+import {AboutPageModule} from "../pages/about/about.module";
+import {EducationPageModule} from "../pages/education/education.module";
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import {FirebaseAnalytics} from "@ionic-native/firebase-analytics";
     IonicStorageModule.forRoot({
       name:"__cwpdb"
     }),
+    MissionPageModule,
+    AboutPageModule,
+    EducationPageModule,
     HttpModule,
     IonicImageViewerModule
   ],

@@ -70,7 +70,10 @@ export class ApiProvider {
       'directions',
       'parking',
       'pavilion-rules',
-      'season-seats'
+      'season-seats',
+      'about-the-venue',
+      'education',
+      'mission-and-non-profit'
     ];
 
     for(let path of paths) {

@@ -5,6 +5,13 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {SeasonSeatsPage} from "../pages/season-seats/season-seats";
 import {TabsPage} from "../pages/tabs/tabs";
 import {Push, PushObject, PushOptions} from '@ionic-native/push';
+import {DirectionsPage} from "../pages/directions/directions";
+import {ParkingPage} from "../pages/parking/parking";
+import {MapsPage} from "../pages/maps/maps";
+import {RulesPage} from "../pages/rules/rules";
+import {MissionPage} from "../pages/mission/mission";
+import {AboutPage} from "../pages/about/about";
+import {EducationPage} from "../pages/education/education";
 
 
 @Component({
@@ -24,15 +31,15 @@ export class MyApp {
               public push: Push) {
 
     this.pages = [
-      // {title: 'Events', component: TabsPage, icon: 'calendar'},
-      // {title: 'Directions', component: DirectionsPage, icon: 'compass'},
-      // {title: 'Parking', component: ParkingPage, icon: 'car'},
-      // {title: 'Maps', component: MapsPage, icon: 'map'},
-      // {title: 'Rules', component: RulesPage, icon: 'information-circle'},
-      {title: 'Season Seats', component: SeasonSeatsPage, icon: 'calendar'},
-      // {title: 'Mission', component: MissionPage, icon: ''},
-      // {title: 'About', component: AboutPage, icon: ''},
-      // {title: 'Education', component: EducationPage, icon: 'information-circle'},
+      {title: 'Events', component: TabsPage, icon: 'calendar'},
+      {title: 'Directions', component: DirectionsPage, icon: 'compass'},
+      {title: 'Parking', component: ParkingPage, icon: 'car'},
+      {title: 'Venue Maps', component: MapsPage, icon: 'map'},
+      {title: 'Rules', component: RulesPage, icon: 'information-circle'},
+      {title: 'Season Seats', component: SeasonSeatsPage, icon: 'star'},
+      {title: 'Mission', component: MissionPage, icon: 'megaphone'},
+      {title: 'About', component: AboutPage, icon: 'paper'},
+      {title: 'Education', component: EducationPage, icon: 'school'},
     ];
 
     const options: PushOptions = {
@@ -61,7 +68,8 @@ export class MyApp {
    * @param page
    */
   openPage(page) {
-    this.nav.push(page.component);
+    // this.nav.push(page.component);
+    this.nav.setRoot(page.component);
   }
 
   /**

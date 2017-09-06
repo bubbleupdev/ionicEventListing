@@ -31,11 +31,17 @@ $brand-grey:            #e0e0e0;
 $brand-white:           #ffffff;
 
 $colors: (
-  primary:    #0241aa,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  brand-alpha:  #0241aa,
+  brand-beta:   #c706c6,
+  brand-gamma:  #43308e,
+  brand-black:  #222222,
+  brand-grey:   #e0e0e0,
+  brand-white:  #ffffff,
+  primary:      #0241aa,
+  secondary:    #32db64,
+  danger:       #f53d3d,
+  light:        #f4f4f4,
+  dark:         #222
 );
 
 

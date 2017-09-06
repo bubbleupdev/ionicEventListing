@@ -1,10 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-packageName="net.bubbleup.cwpfriendfinder" id="net.bubbleup.pavilion" ios-CFBundleIdentifier="net.bubbleup.pavilion" version="3.2.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-packageName="net.bubbleup.cwpfriendfinder" id="net.bubbleup.pavilion" ios-CFBundleIdentifier="net.bubbleup.pavilion" version="3.2.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>The Pavilion</name>
     <description>Welcome to the Cynthia Woods Mitchell Pavilion's App. Now you can have access to The Pavilion anytime, anywhere.</description>
     <author email="apps@bubbleup.net" href="https://bubbleup.net/">BubbleUp LLC</author>
     <content src="index.html" />
     <access origin="*" />
+    <access launch-external="yes" origin="maps:*" />
+    <access launch-external="yes" origin="geo:*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

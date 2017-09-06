@@ -108,13 +108,15 @@ export class HomePage {
   }
 
   getDirections() {
+    let latitude = '30.161352';
+    let longitude = '-95.461979';
 
     if(this.platform.is('ios')){
       // this.directionsUrl = 'maps:?daddr=30.1587681,-95.469625';
-      this.directionsUrl = 'maps:?daddr=30.1609391,-95.4626832';
+      this.directionsUrl = 'maps://?daddr=' + latitude + ',' + longitude;
     }
     if(this.platform.is('android')){
-      this.directionsUrl = 'geo:?daddr=30.1609391,-95.4626832';
+      this.directionsUrl = 'geo://?daddr=' + latitude + ',' + longitude;;
     }
 
   }

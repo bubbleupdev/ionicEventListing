@@ -8,7 +8,14 @@
         "clean": "ionic-app-scripts clean",
         "build": "ionic-app-scripts build",
         "ionic:build": "ionic-app-scripts build",
-        "ionic:serve": "ionic-app-scripts serve"
+        "ionic:serve": "ionic-app-scripts serve",
+        "run:android:device": "ionic cordova run android --device --livereload",
+        "run:android:emulator": "ionic cordova run android --emulator --livereload",
+        "run:ios:device": "ionic cordova run ios --device -l -c -s",
+        "run:ios:simulator": "ionic cordova run ios --emulator --livereload",
+        "build:android": "ionic cordova build android",
+        "build:ios": "ionic cordova build ios",
+        "prepare": "cordova prepare"
     },
     "dependencies": {
         "@angular/common": "^4.1.3",
@@ -23,6 +30,7 @@
         "@ionic-native/core": "^4.1.0",
         "@ionic-native/fcm": "^4.1.0",
         "@ionic-native/firebase-analytics": "^4.1.0",
+        "@ionic-native/launch-navigator": "^4.2.1",
         "@ionic-native/photo-viewer": "^4.1.0",
         "@ionic-native/push": "^4.1.0",
         "@ionic-native/splash-screen": "^4.1.0",
@@ -32,9 +40,11 @@
         "cordova-android": "^6.2.3",
         "cordova-browser": "^4.1.0",
         "cordova-ios": "^4.4.0",
+        "cordova-plugin-actionsheet": "^2.3.3",
         "cordova-plugin-cocoapod-support": "^1.3.0",
         "cordova-plugin-console": "^1.0.7",
         "cordova-plugin-device": "^1.1.6",
+        "cordova-plugin-dialogs": "^1.3.3",
         "cordova-plugin-fcm": "^2.1.2",
         "cordova-plugin-firebase-analytics": "^0.10.1",
         "cordova-plugin-network-information": "^1.3.3",
@@ -50,6 +60,7 @@
         "phonegap-plugin-push": "^2.0.0",
         "rxjs": "^5.4.3",
         "sw-toolbox": "^3.6.0",
+        "uk.co.workingedge.phonegap.plugin.launchnavigator": "^4.0.5",
         "zone.js": "^0.8.16"
     },
     "devDependencies": {
@@ -96,7 +107,10 @@
                 "SENDER_ID": "406620653991"
             },
             "cordova-plugin-firebase-analytics": {},
-            "cordova-plugin-fcm": {}
+            "cordova-plugin-fcm": {},
+            "uk.co.workingedge.phonegap.plugin.launchnavigator": {
+                "LOCATION_USAGE_DESCRIPTION": "This app requires access to your location for navigation purposes"
+            }
         },
         "platforms": [
             "android",

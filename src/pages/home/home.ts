@@ -6,6 +6,7 @@ import {Storage} from '@ionic/storage';
 import {DomSanitizer} from "@angular/platform-browser";
 import * as moment from "moment";
 import {FirebaseAnalytics} from "@ionic-native/firebase-analytics";
+import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
 
 @IonicPage()
 @Component({
@@ -27,6 +28,7 @@ export class HomePage {
               private storage: Storage,
               public loadingCtrl: LoadingController,
               private firebaseAnalytics: FirebaseAnalytics,
+              private launchNavigator: LaunchNavigator,
               public domSanitizer: DomSanitizer) {
 
     this.loading = this.loadingCtrl.create({
@@ -99,6 +101,7 @@ export class HomePage {
   }
 
   openUrl(path) {
+    console.log("open",path);
     window.open(path, '_system');
   }
 
@@ -108,16 +111,26 @@ export class HomePage {
   }
 
   getDirections() {
-    let latitude = '30.161352';
-    let longitude = '-95.461979';
 
-    if(this.platform.is('ios')){
+    let latitude = 30.161352;
+    let longitude = -95.461979;
+
+    if(this.platform.is('ios')) {
+
       // this.directionsUrl = 'maps:?daddr=30.1587681,-95.469625';
-      this.directionsUrl = 'maps://?daddr=' + latitude + ',' + longitude;
+      this.directionsUrl = 'maps://?q=' + latitude + ',' + longitude;
+
+      // this.directionsUrl = 'maps://?daddr=2005,Lake+Robins+Dr,Spring,TX,77380&ll=' + latitude + ',' + longitude +'&dirflg=d';
+      // this.directionsUrl = 'http://maps.apple.com/?daddr=2005,Lake+Robins+Dr,Spring,TX,77380&ll=' + latitude + ',' + longitude +'&dirflg=d';
     }
+
     if(this.platform.is('android')){
-      this.directionsUrl = 'geo://?daddr=' + latitude + ',' + longitude;;
+      this.directionsUrl = 'geo:0,0?q=' + latitude + ',' + longitude + '(The Pavilion Parking)';
     }
+
+  }
+
+  navigate() {
 
   }
 

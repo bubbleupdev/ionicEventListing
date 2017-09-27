@@ -25,6 +25,7 @@ import {FirebaseAnalytics} from "@ionic-native/firebase-analytics";
 import {MissionPageModule} from "../pages/mission/mission.module";
 import {AboutPageModule} from "../pages/about/about.module";
 import {EducationPageModule} from "../pages/education/education.module";
+import {LaunchNavigator} from "@ionic-native/launch-navigator";
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import {EducationPageModule} from "../pages/education/education.module";
     PhotoViewer,
     Push,
     FirebaseAnalytics,
+    LaunchNavigator,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
